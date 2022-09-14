@@ -1,0 +1,9 @@
+Disclaimer
+----------
+The author hereby disclaims all warranties relating to this software,
+whether express or implied, including without limitation any implied
+warranties of merchantability or fitness for a particular purpose.
+The author will not be liable for any special, incidental, consequential,
+indirect or similar damages due to loss of data or any other reason,
+even if advised of the possibility of such damages. Use of this software
+constitutes agreement to these terms by the users.

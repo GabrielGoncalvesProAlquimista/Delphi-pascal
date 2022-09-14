@@ -1,0 +1,78 @@
+
+
+Resource Useage general Steps
+
+Steps:
+
+general steps
+* create a resource script file
+* compile it as a resource
+* bind it to the EXE file
+* access the binded resource(s) by resource name(s)
+
+remarks:
+MyAppRes.R, MyAppRes.RES is illustrative declarations
+AVI & BITMAP must exact, TXT is optional
+definition its mame can be changed, see the sample
+project for useage
+
+
+step descriptions:
+* create a resource script file as "MyAppRes.R"
+with the three lines content as the following
+  place "//" sign in the just-description lines
+
+// [resource name] [Resource Type] [Resource File Name]
+MyAppAvi AVI MyApp.avi
+MyAppBmp BITMAP Smily01.bmp
+MyAppTxt TXT Abaut.txt
+MyAppDisclaim DisclaimText Disclaim.txt
+
+  similar lines added for addtional resources
+  latter is a custom data type definition
+
+* using Borland Resource Compiler (brc32.exe)
+on command line, execute the following
+on the working directory of the project
+brc32 -r -foMyAppRes.RES MyAppRes.R
+ r - just create output resource
+ foMyAppRes.RES - create MYAPPAVI.RES file
+ MyAppRes.R - source script file
+   make sure that brc32.exe in PATH
+
+this creates "MyAppRes.RES" named
+resource file with the AVI resource(s) in it
+
+* bind this resource using the resource adding
+compiler syntax in the application main form
+unit file, or where you want to use,
+e.g: "Unit1.pas" as the following
+{$R MYAPPAVI.RES}
+this adds the resource to the output EXE file
+e.g: Project1.exe
+
+* access this resource(s) using their compiled name
+as MyAppAvi, MyAppBmp, MyAppTxt
+
+*
+.
+. // define constants as
+const
+  AviFileResourceName = string('MyAppAvi');
+  BmpFileResourceName = string('MyAppBmp');
+  TxtFileResourceName = string('MyAppTxt');
+  TxtResourceType = string('TXT');
+.
+.
+
+and their useage is illustrated in the project
+
+
+
+any kind of data other than stardart types can also
+be used in this way, their type definition
+is defined as a custom type and they are accessed
+using windows API functions like "LoadResource"
+
+
+
