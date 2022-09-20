@@ -1,0 +1,28 @@
+ *   !!IMPORTANTE!!                                                 *
+ *                                                                  *
+ * Para Funcionar:                                                  *
+ * (1) - Deverá ser colocado um resistor antes da linha             *
+ *       telefônica entrar em seu modem (veja o arquivo ) *
+ * (2) - A linha deverá estar habilitada para receber sinais de     *
+ *       BINA DTMF (somente para a função BINA)                     *
+ *                                                                  *
+ * (3) - Funciona também como um exelente Detector DTMF. Você poderá*
+ *       fazer seus aplicativos responder a nuneros digitados pela  *
+ *       linha telefonica (veja exemplos)                           *
+ *                                                                  *
+ ********************************************************************
+ *                                                                  *
+ *            LEIA............LEIA...........LEIA                   *
+ *                                                                  *
+ *                                                                  *
+ *  APÓS ANALIZAR OS FONTES VOCÊ PERCEBERÁ QUE O SUPERBINA É APENAS *
+ *  A "GRANDE IDÉIA". AFINAL,QUASE NADA É ADICIONADO ÀQUILO QUE JÁ  *
+ *  SABEMOS. TODO O SEGREDO ESTÁ NA COLOCAÇÃO DO RESISTOR NA LINHA. *
+ *                                                                  *
+ *  DEPENDENDO DO MODEM,ESTE RESISTOR PODE SER ALTERADO POR UM VALOR*
+ *  MAIS ALTO (TESTEI ATÉ COM 8K2 1/2 W). A VANTAGEM DE UM RESISTOR *
+ * ALTO É A SEGUINTE: SEU TELEFONE TOCARÁ NORMALMENTE.  MAS, USANDO *
+ * UM TRUQUE ELE TOCARÁ DA MESMA FORMA: FINALIZAR A PORTA LOGO APÓS *
+ * A DETECÇÃO (ver exemplos)                                        *
+ ********************************************************************
+ }
