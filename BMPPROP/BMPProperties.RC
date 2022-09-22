@@ -1,0 +1,60 @@
+/****************************************************************************
+
+
+bmpprope.rc
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+
+
+100 DIALOG 0, 0, 209, 200
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Details"
+FONT 8, "MS Sans Serif"
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+{
+ LTEXT "Width", -1, 17, 18, 60, 8
+ LTEXT "Height", -1, 17, 30, 60, 8
+ LTEXT "File Size (Internal)", -1, 17, 42, 60, 8
+ LTEXT "Number of Colors", -1, 17, 54, 60, 8
+ LTEXT "<Image Width>", 100, 88, 18, 51, 8
+ LTEXT "<Image Height>", 101, 88, 30, 52, 8
+ LTEXT "<Image Size>", 102, 88, 42, 63, 8
+ LTEXT "<Number of Colors>", 103, 88, 54, 68, 8
+ CONTROL "", 120, "STATIC", SS_WHITERECT | WS_CHILD | WS_VISIBLE, 12, 101, 190, 71
+ PUSHBUTTON "Preview", 110, 98, 178, 50, 14, NOT WS_TABSTOP | WS_DISABLED
+ PUSHBUTTON "About...", 111, 153, 178, 50, 14
+ LTEXT "Format", -1, 17, 66, 60, 8
+ LTEXT "<Image Format>", 104, 88, 66, 85, 8
+ GROUPBOX "Image Data", 108, 9, 5, 175, 86, BS_GROUPBOX
+ LTEXT "Compression", -1, 17, 78, 60, 8
+ LTEXT "<Compression>", 105, 88, 78, 82, 8
+}
+
+
+1 VERSIONINFO 
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK VS_FF_PRERELEASE
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_DLL
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4"
+  {
+   VALUE "CompanyName", "David J. Fiddes\000"
+   VALUE "FileDescription", "BMPProperties Windows 95 shell extension DLL\000"
+   VALUE "FileVersion", "1.00\000"
+   VALUE "InternalName", "BMPProperties\000"
+   VALUE "LegalCopyright", "Copyright (C)1996 David J. Fiddes\000"
+   VALUE "OriginalFilename", "BMPPROP.DLL\000"
+   VALUE "OLESelfRegister", ""
+  }
+
+ }
+
+}
+

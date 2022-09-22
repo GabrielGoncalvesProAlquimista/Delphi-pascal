@@ -1,0 +1,68 @@
+; 
+
+
+[version]
+signature="$CHICAGO$"
+SetupClass=BASE
+
+[DefaultInstall]
+CopyFiles=ThisDll.sys.install
+AddReg=ThisDll.Add.Reg,ThisDll.Uninst.Reg
+
+[DefaultInstall.NT]
+CopyFiles=ThisDll.sys.install
+AddReg=ThisDll.Add.Reg,ThisDll.Uninst.Reg.NT
+
+[ContentInstall]
+CopyFiles=ThisDll.sys.install
+AddReg=ThisDll.Add.Reg,ThisDll.Uninst.Reg
+
+[DefaultUninstall]
+DelFiles=ThisDll.sys.install
+DelReg=ThisDll.Add.Reg,ThisDll.Uninst.Reg
+DelFiles=ThisDll.sys.install
+
+[DefaultUninstall.NT]
+DelFiles=ThisDll.sys.install
+DelReg=ThisDll.Add.Reg,ThisDll.Uninst.Reg.NT
+DelFiles=ThisDll.sys.install
+
+[ThisDll.Add.Reg]
+HKCR,CLSID\%GUID%,,,"%Content_DESC%"
+HKCR,CLSID\%GUID%\InProcServer32,,,"%11%\%SubDir%\%ThisDll%"
+HKCR,CLSID\%GUID%\InProcServer32,ThreadingModel,,"Apartment"
+HKCR,Paint.Picture\shellex\PropertySheetHandlers\%RegName%,,,"%GUID%"
+HKCR,PSP.Image\shellex\PropertySheetHandlers\%RegName%,,,"%GUID%"
+
+[ThisDll.Uninst.Reg]
+HKLM,SoftWare\Microsoft\Windows\CurrentVersion\Uninstall\%RegName%,,,
+HKLM,SoftWare\Microsoft\Windows\CurrentVersion\Uninstall\%RegName%,"DisplayName",,%Content_DESC%
+HKLM,SoftWare\Microsoft\Windows\CurrentVersion\Uninstall\%RegName%,"UninstallString",,"rundll.exe setupx.dll,InstallHinfSection DefaultUnInstall 4 %11%\%SubDir%\%ThisInf%"
+
+[ThisDll.Uninst.Reg.NT]
+HKLM,SoftWare\Microsoft\Windows\CurrentVersion\Uninstall\%RegName%,,,
+HKLM,SoftWare\Microsoft\Windows\CurrentVersion\Uninstall\%RegName%,"DisplayName",,%Content_DESC%
+HKLM,SoftWare\Microsoft\Windows\CurrentVersion\Uninstall\%RegName%,"UninstallString",,"RunDll32 syssetup.dll,SetupInfObjectInstallAction DefaultUnInstall.NT 4 %11%\%SubDir%\%ThisInf%"
+
+[ThisDll.sys.install]
+bmpprop.dll
+bmpprop.inf
+
+[DestinationDirs]
+ThisDll.sys.install=11,%SubDir% ; to System\%SubDir%
+
+[SourceDisksNames]
+55="Bitmap Properties","",1
+
+[SourceDisksFiles]
+%ThisDll%=55
+
+[Strings]
+Content_DESC="Bitmap Details Property Sheet"
+RegName="BitmapDetails"
+SubDir = "ShellExt"
+ThisDll = "bmpprop.dll"
+ThisINF = "bmpprop.inf"
+UIF="Software\Warren\Bitmap Details\Uninstall\Bitmap_Details"
+GUID="{AA6A37C0-04F9-11D0-8AFB-00C0DF44273F}"
+
